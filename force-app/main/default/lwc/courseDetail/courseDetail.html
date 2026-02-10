@@ -1,0 +1,32 @@
+<template>
+
+    <div class="slds-p-around__medium lcd-bg">
+
+        <template if:true={displayCourseInfo}>
+
+           <!-- <lightning-tile label={courseDeatilInfo.courseName} href="/path/to/somewhere">
+
+                <p class="slds-truncate">
+
+                    Course Title :{courseDeatilInfo.courseName}
+
+                    Course Fee :{courseDeatilInfo.courseFee}
+
+                </p>
+
+            </lightning-tile>-->
+
+            <div>
+
+                <slot name="courseSlot"></slot>
+
+                <slot></slot>
+
+            </div>
+
+    </template>
+
+    </div>
+
+</template>
+

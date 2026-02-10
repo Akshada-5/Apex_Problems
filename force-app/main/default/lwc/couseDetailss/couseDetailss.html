@@ -1,0 +1,37 @@
+<template>
+
+   <lightning-card title="Course Information">
+
+       <ul>
+
+           <template for:each={courseDetailsInfo} for:item="course">
+
+               <li key={course.courseName} style="padding: 10px">
+
+                   <c-course-detail course-deatil-info={course} display-course-info=true>
+
+                        <lightning-tile label={course.courseName} href="/path/to/somewhere" slot="courseSlot">
+
+                            <p class="slds-truncate">
+
+                                Course Title :{course.courseName}
+
+                                Course Fee :{course.courseFee}
+
+                            </p>
+
+                        </lightning-tile>   
+
+                         <div>this goes to my unnamed slot</div>   
+
+                   </c-course-detail>
+
+               </li>
+
+           </template>
+
+       </ul>
+
+   </lightning-card>
+
+</template>
