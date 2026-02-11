@@ -1,0 +1,51 @@
+<template>
+    <div class="slds-box mainDiv">
+
+        <template if:true={contacts.data}>
+            <div class="slds-grid slds-wrap slds-gutters">
+
+                <template for:each={contacts.data} for:item="con">
+
+                    <div class="slds-col slds-size_1-of-3 slds-p-around_small" key={con.Id}>
+
+                        <lightning-card title={con.accountName}>
+
+                            <lightning-button
+                                data-id={con.Id}
+                                onclick={navigateToDetails}
+                                variant="brand"
+                                label="View Details"
+                                slot="actions">
+                            </lightning-button>
+
+                            <p class="slds-p-horizontal_small">
+                                <b>Name:</b> {con.Name}
+                            </p>
+
+                            <p class="slds-p-horizontal_small">
+                                <b>Phone:</b> {con.Phone}
+                            </p>
+
+                            <p class="slds-p-horizontal_small">
+                                <b>Email:</b> {con.Email}
+                            </p>
+
+                            <p slot="footer">{con.Email}</p>
+
+                        </lightning-card>
+
+                    </div>
+
+                </template>
+
+            </div>
+        </template>
+
+        <template if:true={contacts.error}>
+            <p class="slds-text-color_error">
+                {contacts.error.body.message}
+            </p>
+        </template>
+
+    </div>
+</template>
